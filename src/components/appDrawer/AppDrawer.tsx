@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { AppBar, Drawer } from "@mui/material";
-import { APP_DRAWER_WIDTH, APP_URL } from "../../constants";
+import { APP_DRAWER_WIDTH, APP_NAME, APP_URL } from "../../constants";
 import Header from "../header/Header";
 import { MENU_ITEMS } from "../../constants/menu";
 
@@ -13,7 +13,7 @@ export const AppDrawer: FC = () => {
   };
 
   return (
-    <AppBar component="nav" color="default">
+    <AppBar component="nav" sx={{ backgroundColor: "#ffffff" }}>
       <Header toggleDrawer={handleToggleDrawer} />
       <Drawer
         open={openDrawer}
@@ -33,13 +33,17 @@ export const AppDrawer: FC = () => {
           className="font-semibold text-lg block mb-4 px-5 py-2 border"
           onClick={handleToggleDrawer}
         >
-          Product Shop
+          {APP_NAME}
         </Link>
         <nav className="px-5">
           <ul>
             {MENU_ITEMS.map((menu, index) => (
               <li key={`${menu.title}_${index}`} className="mb-2">
-                <Link to={menu.url} onClick={handleToggleDrawer}>
+                <Link
+                  to={menu.url}
+                  className="text-slate-800 font-medium"
+                  onClick={handleToggleDrawer}
+                >
                   {menu.title}
                 </Link>
               </li>
