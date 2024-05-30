@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Suspense, lazy } from "react";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import { APP_URL } from "./constants";
+import Spinner from "./components/spinner/Spinner";
 
 function App() {
+  const ProductsPage = lazy(() => import("./scenes/products/Products"));
+  const CartPage = lazy(() => import("./scenes/cart/Cart"));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path={APP_URL.HOME} element={<ProductsPage />} />
+          <Route path={APP_URL.CART} element={<CartPage />} />
+          <Route path="*" element={<ProductsPage />} />
+        </Routes>
+      </Suspense>
+    </Layout>
   );
 }
 
