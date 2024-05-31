@@ -5,16 +5,18 @@ import { APP_URL } from "./constants";
 import Spinner from "./components/spinner/Spinner";
 
 function App() {
-  const ProductsPage = lazy(() => import("./scenes/products/Products"));
+  const HomePage = lazy(() => import("./scenes/home/Home"));
+  const ProductPage = lazy(() => import("./scenes/product/Product"));
   const CartPage = lazy(() => import("./scenes/cart/Cart"));
 
   return (
     <Layout>
       <Suspense fallback={<Spinner />}>
         <Routes>
-          <Route path={APP_URL.HOME} element={<ProductsPage />} />
+          <Route path={APP_URL.HOME} element={<HomePage />} />
+          <Route path={`${APP_URL.PRODUCT}/:id`} element={<ProductPage />} />
           <Route path={APP_URL.CART} element={<CartPage />} />
-          <Route path="*" element={<ProductsPage />} />
+          <Route path="*" element={<HomePage />} />
         </Routes>
       </Suspense>
     </Layout>

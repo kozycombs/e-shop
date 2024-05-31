@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
-import { AppBar, Drawer } from "@mui/material";
+import { AppBar, Divider, Drawer } from "@mui/material";
 import { APP_DRAWER_WIDTH, APP_NAME, APP_URL } from "../../constants";
 import Header from "../header/Header";
 import { MENU_ITEMS } from "../../constants/menu";
@@ -30,11 +30,14 @@ export const AppDrawer: FC = () => {
       >
         <Link
           to={APP_URL.HOME}
-          className="font-semibold text-lg block mb-4 px-5 py-2 border"
+          className="font-semibold text-lg block px-5 py-4"
           onClick={handleToggleDrawer}
         >
           {APP_NAME}
         </Link>
+        <Divider
+          sx={{ bgcolor: "rgb(30 41 59 / var(--tw-bg-opacity))", mb: 2 }}
+        />
         <nav className="px-5">
           <ul>
             {MENU_ITEMS.map((menu, index) => (

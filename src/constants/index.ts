@@ -1,8 +1,9 @@
 export const APP_NAME: string = "E-Shop";
+export const API_BASE_URL: string = "https://fakestoreapi.com";
 
 export const APP_URL = {
   HOME: "/",
-  PRODUCTS: "/products",
+  PRODUCT: "/product",
   CART: "/cart",
 };
 

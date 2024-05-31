@@ -27,7 +27,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <AppDrawer />
       <Box sx={{ flexGrow: "1" }}>
         <AppContainer>
-          <main className="mt-[70px]">{children}</main>
+          <main className="pt-[89px]">{children}</main>
         </AppContainer>
       </Box>
       <Footer />

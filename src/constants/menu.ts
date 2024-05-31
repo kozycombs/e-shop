@@ -8,7 +8,7 @@ interface Menu {
 
 export const MENU_ITEMS: Menu[] = [
   {
-    title: "Product",
+    title: "All Products",
     url: APP_URL.HOME,
     isActive: false,
   },
