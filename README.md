@@ -57,6 +57,7 @@ This project was created with the stack below:
 - CSS
 - Javascript
 - React
+- React Redux
 - Redux toolkit
 - Typescript
 - Material UI
