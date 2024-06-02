@@ -1,7 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
+  Alert,
   Box,
   Button,
   Divider,
@@ -11,27 +12,54 @@ import {
   Rating,
   Select,
   SelectChangeEvent,
+  Snackbar,
   Typography,
 } from "@mui/material";
 import { fetchProduct, productsSelector } from "../../store/productSlice";
 import { Product as ProductInterface } from "../../interface/Product";
 import Spinner from "../../components/spinner/Spinner";
+import {
+  addToCart,
+  cartSelector,
+  updateCart,
+  updateCartProduct,
+} from "../../store/cartSlice";
+import { ToastMessage } from "../../interface/ToastMessage";
+import { PRODUCT_QUATITY_COUNT } from "../../constants";
+import ErrorBanner from "../../components/errorBanner/ErrorBanner";
 
 const Product: FC = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const products = useSelector(productsSelector);
+  const { data: cart } = useSelector(cartSelector);
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState<ProductInterface>();
   const [quantity, setQuantity] = useState(1);
+  const [toastMessage, setToastMessage] = useState<ToastMessage>({
+    message: "",
+    severity: "success",
+  });
+  const [error, setError] = useState("");
+  const userId = 1; // This is a dummy user id, since there is no logged in functionality.
+  const vertical = "top";
+  const horizontal = "right";
 
   useEffect(() => {
     const getProduct = async () => {
-      const result = await fetchProduct(Number(id));
-      setProduct(result);
-      setLoading(false);
+      try {
+        const result = await fetchProduct(Number(id));
+        setProduct(result);
+        setLoading(false);
+      } catch (error) {
+        setError("Failed to load our product. Please try again later");
+        setLoading(false);
+      }
     };
 
-    // If product list is empty get product detail from API otherwiser get product detail from cached product list.
+    // If product list is empty get product detail from API
+    // otherwiser get product detail from cached product list.
+
     if (products.data.length <= 0) {
       setLoading(true);
       getProduct();
@@ -48,12 +76,125 @@ const Product: FC = () => {
     }
   }, [id, products]);
 
+  const resetToastMessage = () => {
+    setToastMessage({ message: "", severity: "success" });
+  };
+
   const handleQuantityChange = (event: SelectChangeEvent) => {
     setQuantity(Number(event.target.value));
   };
 
-  const handleAddToCart = () => {
-    console.log("Add to cart:", quantity);
+  const handleAddToCart = async () => {
+    if (!product) {
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const date = new Date().toISOString();
+
+      // If cart is null add to cart else update with cart id.
+      if (!cart) {
+        const result = await addToCart(userId, date, [
+          { productId: product?.id, quantity },
+        ]);
+        if (result.id) {
+          dispatch(
+            updateCart({
+              id: Number(result.id),
+              userId,
+              date,
+              products: [{ productId: product?.id, quantity }],
+            })
+          );
+          setToastMessage({
+            message: "Product added to cart successfully",
+            severity: "success",
+          });
+        } else {
+          setToastMessage({
+            message: "Failed to add product to cart",
+            severity: "error",
+          });
+        }
+      } else {
+        const productFoundIndex = cart.products.findIndex(
+          (currentProduct) => currentProduct.productId === product.id
+        );
+
+        if (productFoundIndex > -1) {
+          const updatedProduct = {
+            ...cart.products[productFoundIndex],
+            quantity: cart.products[productFoundIndex].quantity + quantity,
+          };
+          const otherProducts = cart.products.filter(
+            (currentProduct) => currentProduct.productId !== product.id
+          );
+          const products = [...otherProducts, updatedProduct];
+          const result = await updateCartProduct(
+            cart.id,
+            userId,
+            date,
+            products
+          );
+          if (result.id) {
+            dispatch(
+              updateCart({
+                id: Number(result.id),
+                userId,
+                date,
+                products,
+              })
+            );
+            setToastMessage({
+              message: "Product added to cart successfully",
+              severity: "success",
+            });
+            setQuantity(1);
+          } else {
+            setToastMessage({
+              message: "Failed to add product to cart",
+              severity: "error",
+            });
+          }
+        } else {
+          const products = [
+            ...cart.products,
+            { productId: product?.id, quantity },
+          ];
+          const result = await updateCartProduct(
+            cart.id,
+            userId,
+            date,
+            products
+          );
+          if (result.id) {
+            dispatch(
+              updateCart({
+                id: Number(result.id),
+                userId,
+                date,
+                products,
+              })
+            );
+            setToastMessage({
+              message: "Product added to cart successfully",
+              severity: "success",
+            });
+            setQuantity(1);
+          } else {
+            setToastMessage({
+              message: "Failed to add product to cart",
+              severity: "error",
+            });
+          }
+        }
+      }
+      setLoading(false);
+    } catch (error) {
+      setError("Failed to add product to cart. Please try again later");
+      setLoading(false);
+    }
   };
 
   return (
@@ -64,6 +205,25 @@ const Product: FC = () => {
         </Box>
       )}
 
+      {error.length > 0 && <ErrorBanner message={error} />}
+
+      <Snackbar
+        anchorOrigin={{ vertical, horizontal }}
+        open={toastMessage?.message.length > 0}
+        autoHideDuration={2000}
+        onClose={resetToastMessage}
+        key={vertical + horizontal}
+      >
+        <Alert
+          onClose={resetToastMessage}
+          severity={toastMessage?.severity}
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+          {toastMessage?.message}
+        </Alert>
+      </Snackbar>
+
       <Grid container spacing={{ xs: 4, md: 3 }} columns={{ xs: 1, sm: 4 }}>
         <Grid item xs={1} sm={2}>
           <Box
@@ -73,7 +233,6 @@ const Product: FC = () => {
               width: "100%",
               maxHeight: { xs: 400 },
               objectFit: "contain",
-              // maxWidth: { xs: 350, md: 250 },
             }}
             alt={product?.title}
             src={product?.image}
@@ -126,9 +285,13 @@ const Product: FC = () => {
                 value={`${quantity}`}
                 onChange={handleQuantityChange}
               >
-                <MenuItem value={1}>1</MenuItem>
-                <MenuItem value={2}>2</MenuItem>
-                <MenuItem value={3}>3</MenuItem>
+                {Array(PRODUCT_QUATITY_COUNT)
+                  .fill("_")
+                  .map((_, index) => (
+                    <MenuItem key={index} value={index + 1}>
+                      {index + 1}
+                    </MenuItem>
+                  ))}
               </Select>
             </FormControl>
             <Button

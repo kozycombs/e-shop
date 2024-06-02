@@ -1,12 +1,14 @@
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
-import { AppBar, Divider, Drawer } from "@mui/material";
+import { AppBar, Badge, Divider, Drawer } from "@mui/material";
 import { APP_DRAWER_WIDTH, APP_NAME, APP_URL } from "../../constants";
 import Header from "../header/Header";
 import { MENU_ITEMS } from "../../constants/menu";
+import useCartItemsTotal from "../../hooks/useCartItemsTotal";
 
 export const AppDrawer: FC = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
+  const { getTotalItemsInCart } = useCartItemsTotal();
 
   const handleToggleDrawer = () => {
     setOpenDrawer((openDrawer) => !openDrawer);
@@ -40,17 +42,35 @@ export const AppDrawer: FC = () => {
         />
         <nav className="px-5">
           <ul>
-            {MENU_ITEMS.map((menu, index) => (
-              <li key={`${menu.title}_${index}`} className="mb-2">
-                <Link
-                  to={menu.url}
-                  className="text-slate-800 font-medium"
-                  onClick={handleToggleDrawer}
+            {MENU_ITEMS.map((menu, index) =>
+              menu.url === APP_URL.CART ? (
+                <Badge
+                  key={`${menu.title}_${index}`}
+                  badgeContent={getTotalItemsInCart()}
+                  color="primary"
                 >
-                  {menu.title}
-                </Link>
-              </li>
-            ))}
+                  <li key={`${menu.title}_${index}`} className="mb-2">
+                    <Link
+                      to={menu.url}
+                      className="text-slate-800 font-medium"
+                      onClick={handleToggleDrawer}
+                    >
+                      {menu.title}
+                    </Link>
+                  </li>
+                </Badge>
+              ) : (
+                <li key={`${menu.title}_${index}`} className="mb-4">
+                  <Link
+                    to={menu.url}
+                    className="text-slate-800 font-medium"
+                    onClick={handleToggleDrawer}
+                  >
+                    {menu.title}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
         </nav>
       </Drawer>

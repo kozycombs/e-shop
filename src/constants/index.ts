@@ -8,3 +8,5 @@ export const APP_URL = {
 };
 
 export const APP_DRAWER_WIDTH: number = 240;
+
+export const PRODUCT_QUATITY_COUNT = 10;

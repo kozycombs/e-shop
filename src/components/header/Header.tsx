@@ -1,15 +1,18 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { APP_NAME, APP_URL } from "../../constants";
-import { IconButton } from "@mui/material";
+import { Badge, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AppContainer from "../appContainer/AppContainer";
+import { APP_NAME, APP_URL } from "../../constants";
 import { MENU_ITEMS } from "../../constants/menu";
+import useCartItemsTotal from "../../hooks/useCartItemsTotal";
 
 interface HeaderProps {
   toggleDrawer: () => void;
 }
 const Header: FC<HeaderProps> = ({ toggleDrawer }) => {
+  const { getTotalItemsInCart } = useCartItemsTotal();
+
   return (
     <AppContainer>
       <header className="flex justify-between items-center py-4">
@@ -20,14 +23,28 @@ const Header: FC<HeaderProps> = ({ toggleDrawer }) => {
           {APP_NAME}
         </Link>
         <nav className="hidden sm:block">
-          <ul className="flex gap-4">
-            {MENU_ITEMS.map((menu, index) => (
-              <li key={`${menu.title}_${index}`}>
-                <Link to={menu.url} className="text-slate-800 font-medium">
-                  {menu.title}
-                </Link>
-              </li>
-            ))}
+          <ul className="flex gap-8">
+            {MENU_ITEMS.map((menu, index) =>
+              menu.url === APP_URL.CART ? (
+                <Badge
+                  key={`${menu.title}_${index}`}
+                  badgeContent={getTotalItemsInCart()}
+                  color="primary"
+                >
+                  <li>
+                    <Link to={menu.url} className="text-slate-800 font-medium">
+                      {menu.title}
+                    </Link>
+                  </li>
+                </Badge>
+              ) : (
+                <li key={`${menu.title}_${index}`}>
+                  <Link to={menu.url} className="text-slate-800 font-medium">
+                    {menu.title}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
         </nav>
         <IconButton

@@ -8,24 +8,30 @@ import {
 } from "../../store/productSlice";
 import ProductItem from "../../components/productItem/ProductItem";
 import Spinner from "../../components/spinner/Spinner";
+import ErrorBanner from "../../components/errorBanner/ErrorBanner";
 
 const Home: FC = () => {
   const dispatch = useDispatch();
   const products = useSelector(productsSelector);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const getProducts = async () => {
-      const result = await fetchProducts();
-      dispatch(updateProducts(result));
-      setLoading(false);
+      try {
+        const result = await fetchProducts();
+        dispatch(updateProducts(result));
+        setLoading(false);
+      } catch (error) {
+        setError("Failed to load our products. Please try again later");
+        setLoading(false);
+      }
     };
     if (products.data.length <= 0) {
       setLoading(true);
       getProducts();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [products]);
+  }, [products, dispatch]);
 
   return (
     <Box>
@@ -37,6 +43,7 @@ const Home: FC = () => {
           <Spinner />
         </Box>
       )}
+      {error.length > 0 && <ErrorBanner message={error} />}
       <Grid
         container
         spacing={{ xs: 4, md: 3 }}

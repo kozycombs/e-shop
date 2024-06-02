@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from ".";
 import { API_BASE_URL } from "../constants";
 import { InitialStateProps } from "../interface/InitialStateProps";
-import { Cart, CartProduct } from "../interface/Cart";
+import { Cart, CartProduct, CartResponse } from "../interface/Cart";
 
 export const initialState: InitialStateProps<Cart | null> = {
   data: null,
@@ -13,13 +13,16 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    updateCart: (state, action) => {
+    updateCart: (state, action: { payload: Cart }) => {
       state.data = action.payload;
+    },
+    resetCart: () => {
+      return { ...initialState };
     },
   },
 });
 
-export const { updateCart } = cartSlice.actions;
+export const { updateCart, resetCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
 
@@ -47,9 +50,9 @@ export const updateCartProduct = async (
   userId: number,
   date: string,
   products: CartProduct[]
-): Promise<Cart> => {
+): Promise<CartResponse> => {
   const response = await fetch(`${API_BASE_URL}/carts/${cartId}`, {
-    method: "POST",
+    method: "PUT",
     body: JSON.stringify({
       userId,
       date,
