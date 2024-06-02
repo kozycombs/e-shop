@@ -113,9 +113,9 @@ For this project a monolithic architecture is used due to the size of the applic
 A micro frontend architecture could be considered for future improvement and as the application grows.
 This will require creating separate React applications for each feature of the ecommerce application e.g
 
-Product catalog and search functionlity,
-Shopping cart and checkout functionality including payment gateway,
-User authentication, account and order management functionality etc.
+- Product catalog and search functionlity,
+- Shopping cart and checkout functionality including payment gateway,
+- User authentication, account and order management functionality etc.
 
 ## Application structure
 
