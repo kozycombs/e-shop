@@ -1,47 +1,55 @@
 import { FC } from "react";
 import { Product } from "../../interface/Product";
 import {
+  Box,
   Card,
   CardContent,
   CardMedia,
   Rating,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
-import { APP_URL } from "../../constants";
 
 interface ProductItemProps {
   product: Product;
 }
 const ProductItem: FC<ProductItemProps> = ({ product }) => {
   return (
-    <Link to={`${APP_URL.PRODUCT}/${product.id}`}>
-      <Card>
-        <CardMedia
-          component="img"
-          alt={product.title}
-          image={product.image}
+    <Card>
+      <CardMedia
+        component="img"
+        alt={product.title}
+        image={product.image}
+        sx={{
+          height: "240px",
+          maxHeight: "240px",
+          objectFit: "contain",
+        }}
+      />
+      <CardContent sx={{ bgcolor: "#f5f5f5" }}>
+        <Typography
+          gutterBottom
           sx={{
-            height: "240px",
-            maxHeight: "240px",
-            objectFit: "contain",
+            fontSize: 18,
+            fontWeight: 500,
+            ":hover": { textDecoration: "underline" },
           }}
-        />
-        <CardContent>
-          <Typography gutterBottom className="!text-lg">
-            {product.title}
-          </Typography>
-          <Typography gutterBottom className="!text-lg">
-            &pound;{product.price}
-          </Typography>
+        >
+          {product.title}
+        </Typography>
+        <Typography gutterBottom sx={{ fontSize: 18 }}>
+          &pound;{product.price}
+        </Typography>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Typography component="p">{product.rating.rate}</Typography>
           <Rating
             name="read-only"
             value={Number(product.rating.rate)}
             readOnly
           />
-        </CardContent>
-      </Card>
-    </Link>
+          <Typography component="p">{product.rating.count} reviews</Typography>
+        </Box>
+      </CardContent>
+    </Card>
   );
 };
 

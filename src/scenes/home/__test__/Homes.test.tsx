@@ -1,12 +1,12 @@
 import { Provider } from "react-redux";
-import { render, act } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { updateProducts } from "./store/productSlice";
-import { store } from "./store";
-import { Product } from "./interface/Product";
-import App from "./App";
+import { updateProducts } from "../../../store/productSlice";
+import { store } from "../../../store";
+import { Product } from "../../../interface/Product";
+import Home from "../Home";
 
-describe("<App />", () => {
+describe("<Home />", () => {
   beforeAll(() => {
     const product: Product = {
       id: 16,
@@ -26,19 +26,18 @@ describe("<App />", () => {
     store.dispatch(updateProducts([product]));
   });
 
-  test("renders a product title", async () => {
-    let component;
-    // eslint-disable-next-line testing-library/no-unnecessary-act
-    await act(async () => {
-      component = render(
-        <Provider store={store}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </Provider>
-      );
-    });
+  test("renders a product title", () => {
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </Provider>
+    );
 
-    expect(component).toMatchSnapshot();
+    const productTitle = screen.getByText(
+      /Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket/i
+    );
+    expect(productTitle).toBeInTheDocument();
   });
 });

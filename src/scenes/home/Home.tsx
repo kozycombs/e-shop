@@ -9,6 +9,8 @@ import {
 import ProductItem from "../../components/productItem/ProductItem";
 import Spinner from "../../components/spinner/Spinner";
 import ErrorBanner from "../../components/errorBanner/ErrorBanner";
+import { Link } from "react-router-dom";
+import { APP_URL } from "../../constants";
 
 const Home: FC = () => {
   const dispatch = useDispatch();
@@ -48,11 +50,13 @@ const Home: FC = () => {
         container
         spacing={{ xs: 4, md: 3 }}
         rowSpacing={4}
-        columns={{ xs: 1, sm: 8, md: 12 }}
+        columns={{ xs: 12, sm: 12, md: 12 }}
       >
         {products.data.map((product, index) => (
-          <Grid item xs={1} sm={4} md={4} key={index}>
-            <ProductItem product={product} />
+          <Grid item xs={6} sm={4} md={3} key={index}>
+            <Link to={`${APP_URL.PRODUCT}/${product.id}`}>
+              <ProductItem product={product} />
+            </Link>
           </Grid>
         ))}
       </Grid>

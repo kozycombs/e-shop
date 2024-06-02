@@ -225,7 +225,7 @@ const Product: FC = () => {
       </Snackbar>
 
       <Grid container spacing={{ xs: 4, md: 3 }} columns={{ xs: 1, sm: 4 }}>
-        <Grid item xs={1} sm={2}>
+        <Grid item xs={1} sm={2} sx={{ marginBottom: 10 }}>
           <Box
             component="img"
             sx={{
@@ -239,6 +239,7 @@ const Product: FC = () => {
           />
         </Grid>
         <Grid item xs={1} sm={2}>
+          <Box></Box>
           <Typography
             variant="h1"
             sx={{ mb: 1, fontWeight: "400", fontSize: 24 }}

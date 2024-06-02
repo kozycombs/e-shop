@@ -1,0 +1,552 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders a product title 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-1622sjm-MuiPaper-root-MuiAppBar-root"
+      >
+        <div
+          class="MuiContainer-root MuiContainer-maxWidthLg css-1j0emvn-MuiContainer-root"
+        >
+          <header
+            class="flex justify-between items-center py-4"
+          >
+            <a
+              class="font-semibold text-2xl text-slate-800"
+              href="/"
+            >
+              E-Shop
+            </a>
+            <nav
+              class="hidden sm:block"
+            >
+              <ul
+                class="flex gap-8"
+              >
+                <li>
+                  <a
+                    class="text-slate-800 font-medium"
+                    href="/"
+                  >
+                    All Products
+                  </a>
+                </li>
+                <span
+                  class="MuiBadge-root css-1c32n2y-MuiBadge-root"
+                >
+                  <li>
+                    <a
+                      class="text-slate-800 font-medium"
+                      href="/cart"
+                    >
+                      Cart
+                    </a>
+                  </li>
+                  <span
+                    class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary css-y2h6q0-MuiBadge-badge"
+                  />
+                </span>
+              </ul>
+            </nav>
+            <button
+              aria-label="open drawer"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium bg-slate-800 css-ddp6wk-MuiButtonBase-root-MuiIconButton-root"
+              tabindex="0"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="MenuIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"
+                />
+              </svg>
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </header>
+        </div>
+      </nav>
+      <div
+        class="MuiBox-root css-i9gxme"
+      >
+        <div
+          class="MuiContainer-root MuiContainer-maxWidthLg css-1j0emvn-MuiContainer-root"
+        >
+          <main
+            class="pt-[89px]"
+          >
+            <div
+              class="MuiBox-root css-0"
+            >
+              <h3
+                class="MuiTypography-root MuiTypography-h3 css-a5qzwy-MuiTypography-root"
+              >
+                Products
+              </h3>
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-spacing-md-3 css-1bzsu2l-MuiGrid-root"
+              >
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1xucbe2-MuiGrid-root"
+                >
+                  <a
+                    href="/product/16"
+                  >
+                    <div
+                      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
+                    >
+                      <img
+                        alt="Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket"
+                        class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-aob7bp-MuiCardMedia-root"
+                        src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+                      />
+                      <div
+                        class="MuiCardContent-root css-erizva-MuiCardContent-root"
+                      >
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-56rs9p-MuiTypography-root"
+                        >
+                          Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket
+                        </p>
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-15ejcyd-MuiTypography-root"
+                        >
+                          £
+                          29.95
+                        </p>
+                        <div
+                          class="MuiBox-root css-70qvj9"
+                        >
+                          <p
+                            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                          >
+                            2.9
+                          </p>
+                          <span
+                            aria-label="3 Stars"
+                            class="MuiRating-root MuiRating-sizeMedium Mui-readOnly MuiRating-readOnly css-15befwp-MuiRating-root"
+                            role="img"
+                          >
+                            <span>
+                              <span
+                                class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                  data-testid="StarIcon"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                  data-testid="StarIcon"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                  data-testid="StarIcon"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                  data-testid="StarBorderIcon"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                  data-testid="StarBorderIcon"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </span>
+                          <p
+                            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                          >
+                            340
+                             reviews
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+      <footer
+        class="flex justify-around mt-40 p-4 bg-slate-800 text-white"
+      >
+        <p>
+          Copyright © 
+          2024
+           - All right reserved by
+           
+          E-Shop
+        </p>
+      </footer>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-1622sjm-MuiPaper-root-MuiAppBar-root"
+    >
+      <div
+        class="MuiContainer-root MuiContainer-maxWidthLg css-1j0emvn-MuiContainer-root"
+      >
+        <header
+          class="flex justify-between items-center py-4"
+        >
+          <a
+            class="font-semibold text-2xl text-slate-800"
+            href="/"
+          >
+            E-Shop
+          </a>
+          <nav
+            class="hidden sm:block"
+          >
+            <ul
+              class="flex gap-8"
+            >
+              <li>
+                <a
+                  class="text-slate-800 font-medium"
+                  href="/"
+                >
+                  All Products
+                </a>
+              </li>
+              <span
+                class="MuiBadge-root css-1c32n2y-MuiBadge-root"
+              >
+                <li>
+                  <a
+                    class="text-slate-800 font-medium"
+                    href="/cart"
+                  >
+                    Cart
+                  </a>
+                </li>
+                <span
+                  class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary css-y2h6q0-MuiBadge-badge"
+                />
+              </span>
+            </ul>
+          </nav>
+          <button
+            aria-label="open drawer"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium bg-slate-800 css-ddp6wk-MuiButtonBase-root-MuiIconButton-root"
+            tabindex="0"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="MenuIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"
+              />
+            </svg>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </header>
+      </div>
+    </nav>
+    <div
+      class="MuiBox-root css-i9gxme"
+    >
+      <div
+        class="MuiContainer-root MuiContainer-maxWidthLg css-1j0emvn-MuiContainer-root"
+      >
+        <main
+          class="pt-[89px]"
+        >
+          <div
+            class="MuiBox-root css-0"
+          >
+            <h3
+              class="MuiTypography-root MuiTypography-h3 css-a5qzwy-MuiTypography-root"
+            >
+              Products
+            </h3>
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-spacing-md-3 css-1bzsu2l-MuiGrid-root"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1xucbe2-MuiGrid-root"
+              >
+                <a
+                  href="/product/16"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
+                  >
+                    <img
+                      alt="Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket"
+                      class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-aob7bp-MuiCardMedia-root"
+                      src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+                    />
+                    <div
+                      class="MuiCardContent-root css-erizva-MuiCardContent-root"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-56rs9p-MuiTypography-root"
+                      >
+                        Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket
+                      </p>
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-15ejcyd-MuiTypography-root"
+                      >
+                        £
+                        29.95
+                      </p>
+                      <div
+                        class="MuiBox-root css-70qvj9"
+                      >
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          2.9
+                        </p>
+                        <span
+                          aria-label="3 Stars"
+                          class="MuiRating-root MuiRating-sizeMedium Mui-readOnly MuiRating-readOnly css-15befwp-MuiRating-root"
+                          role="img"
+                        >
+                          <span>
+                            <span
+                              class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                data-testid="StarIcon"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                          <span>
+                            <span
+                              class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                data-testid="StarIcon"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                          <span>
+                            <span
+                              class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                data-testid="StarIcon"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                          <span>
+                            <span
+                              class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                data-testid="StarBorderIcon"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                          <span>
+                            <span
+                              class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                data-testid="StarBorderIcon"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </span>
+                        <p
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          340
+                           reviews
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <footer
+      class="flex justify-around mt-40 p-4 bg-slate-800 text-white"
+    >
+      <p>
+        Copyright © 
+        2024
+         - All right reserved by
+         
+        E-Shop
+      </p>
+    </footer>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -139,7 +139,7 @@ const Cart: FC = () => {
                     component="p"
                     sx={{ fontSize: 18, fontWeight: 500, mb: 4 }}
                   >
-                    &pound;{getCartTotal()}
+                    &pound;{Number(getCartTotal()).toFixed(2)}
                   </Typography>
                 </Box>
                 <Button

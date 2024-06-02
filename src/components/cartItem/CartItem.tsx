@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { CartProduct } from "../../interface/Cart";
 import { Product } from "../../interface/Product";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { APP_URL } from "../../constants";
 
@@ -58,6 +58,7 @@ const CartItem: FC<CartItemProps> = ({ cartItem, product }) => {
           </Typography>
         </Box>
       </Grid>
+      <Divider sx={{ mb: 4 }} />
     </Grid>
   );
 };
