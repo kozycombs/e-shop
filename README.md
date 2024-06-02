@@ -138,13 +138,13 @@ Project
 │   ├── logo.svg
 │   ├── react-app-env.d.ts
 │   ├── setupTests.ts
-│   ├── .gitignore
-│   ├── .eslint.config.mjs
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── README.md
-│   ├── tailwind.config.js
-│   ├── tsconfig.json
+├── .gitignore
+├── .eslint.config.mjs
+├── package-lock.json
+├── package.json
+├── README.md
+├── tailwind.config.js
+├── tsconfig.json
 ```
 
 ## Possible Improvements
