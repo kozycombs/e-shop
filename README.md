@@ -49,8 +49,23 @@ The customer can click on the Place your order button to confirm their order.
 
 ### Created with
 
-This project was created with:
-Nodejs, NPM, HTML, CSS, Javascript, React, Redux toolkit, Typescript, Material UI, TailwindCSS, Jest, React Testing Library, ESLint
+This project was created with the stack below:
+
+- Nodejs
+- NPM
+- HTML
+- CSS
+- Javascript
+- React
+- Redux toolkit
+- Typescript
+- Material UI
+- TailwindCSS
+- Jest
+- React Testing Library
+- ESLint
+- Git
+- Visual studio code
 
 ### API Integration
 
