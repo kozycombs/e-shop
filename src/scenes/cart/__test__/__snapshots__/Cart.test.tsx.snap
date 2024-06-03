@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartPage /> should render the component 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-xuhmcu"
+  >
+    <h1
+      class="MuiTypography-root MuiTypography-h1 css-1vcc1nn-MuiTypography-root"
+    >
+      Your Basket
+    </h1>
+    <hr
+      class="MuiDivider-root MuiDivider-fullWidth css-1t2s6c-MuiDivider-root"
+    />
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-spacing-md-4 css-pt1vvu-MuiGrid-root"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-sm-4 css-fqifuh-MuiGrid-root"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-spacing-md-3 css-1njvgv6-MuiGrid-root"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-sm-1 css-w9nz8z-MuiGrid-root"
+          >
+            <a
+              href="/product/4"
+            >
+              <img
+                alt="Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket"
+                class="MuiBox-root css-10514to"
+                src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+              />
+            </a>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-sm-3 css-1rn35ll-MuiGrid-root"
+          >
+            <a
+              href="/product/4"
+            >
+              <p
+                class="MuiTypography-root MuiTypography-body1 css-1xh9tsm-MuiTypography-root"
+              >
+                Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket
+              </p>
+              <p
+                class="MuiTypography-root MuiTypography-body1 css-15okrha-MuiTypography-root"
+              >
+                quantity: 2
+              </p>
+            </a>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-sm-1 css-w9nz8z-MuiGrid-root"
+          >
+            <div
+              class="MuiBox-root css-0"
+            >
+              <p
+                class="MuiTypography-root MuiTypography-body1 css-jcjl1m-MuiTypography-root"
+              >
+                £59.9
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-sm-2 css-oe53i6-MuiGrid-root"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-outlined MuiPaper-rounded MuiCard-root css-1v5z4dq-MuiPaper-root-MuiCard-root"
+        >
+          <div
+            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          >
+            <h2
+              class="MuiTypography-root MuiTypography-h2 css-l7ef1q-MuiTypography-root"
+            >
+              Summary
+            </h2>
+            <hr
+              class="MuiDivider-root MuiDivider-fullWidth css-1t2s6c-MuiDivider-root"
+            />
+            <div
+              class="MuiBox-root css-pcqfzb"
+            >
+              <p
+                class="MuiTypography-root MuiTypography-body1 css-1divac3-MuiTypography-root"
+              >
+                Total
+              </p>
+              <p
+                class="MuiTypography-root MuiTypography-body1 css-1divac3-MuiTypography-root"
+                data-test="cartTotal"
+              >
+                £59.90
+              </p>
+            </div>
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSuccess MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSuccess css-1n7bogu-MuiButtonBase-root-MuiButton-root"
+              tabindex="0"
+              type="button"
+            >
+              Place your Order
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

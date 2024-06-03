@@ -1,5 +1,6 @@
+import { act } from "react";
 import { Provider } from "react-redux";
-import { render, act } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { updateProducts } from "./store/productSlice";
 import { store } from "./store";

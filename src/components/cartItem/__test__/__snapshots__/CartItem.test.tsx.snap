@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartItem /> component should render the component 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-spacing-md-3 css-1njvgv6-MuiGrid-root"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-sm-1 css-w9nz8z-MuiGrid-root"
+    >
+      <a
+        href="/product/16"
+      >
+        <img
+          alt="Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket"
+          class="MuiBox-root css-10514to"
+          src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+        />
+      </a>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-sm-3 css-1rn35ll-MuiGrid-root"
+    >
+      <a
+        href="/product/16"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-1xh9tsm-MuiTypography-root"
+        >
+          Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-15okrha-MuiTypography-root"
+        >
+          quantity: 3
+        </p>
+      </a>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-sm-1 css-w9nz8z-MuiGrid-root"
+    >
+      <div
+        class="MuiBox-root css-0"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-jcjl1m-MuiTypography-root"
+        >
+          £89.85
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

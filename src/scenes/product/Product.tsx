@@ -277,12 +277,13 @@ const Product: FC = () => {
             component="p"
             sx={{ fontSize: 24, fontWeight: 400, mb: 4 }}
           >
-            &pound;{product?.price}
+            &pound;{Number(product?.price).toFixed(2)}
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center", mb: 4 }}>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
               <Select
                 id="quantity"
+                data-test="quantity"
                 value={`${quantity}`}
                 onChange={handleQuantityChange}
               >
@@ -300,6 +301,7 @@ const Product: FC = () => {
               size="medium"
               disableElevation
               onClick={handleAddToCart}
+              sx={{ textTransform: "none" }}
             >
               Add to Cart
             </Button>

@@ -1,13 +1,16 @@
 import { Provider } from "react-redux";
-import { render, screen } from "@testing-library/react";
+import { render, screen, configure } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { updateProducts } from "../../../store/productSlice";
 import { store } from "../../../store";
 import { Product } from "../../../interface/Product";
-import Home from "../Home";
+import ProductDetail from "../Product";
 
-describe("<Home />", () => {
+describe("<ProductDetail />", () => {
   beforeAll(() => {
+    configure({
+      testIdAttribute: "data-test",
+    });
     const product: Product = {
       id: 16,
       title:
@@ -30,25 +33,36 @@ describe("<Home />", () => {
     const { asFragment } = render(
       <Provider store={store}>
         <BrowserRouter>
-          <Home />
+          <ProductDetail />
         </BrowserRouter>
       </Provider>
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("renders a product title", () => {
+  it("should have a quantity input field", () => {
     render(
       <Provider store={store}>
         <BrowserRouter>
-          <Home />
+          <ProductDetail />
         </BrowserRouter>
       </Provider>
     );
 
-    const productTitle = screen.getByText(
-      /Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket/i
+    const quantityInput = screen.getByTestId("quantity");
+    expect(quantityInput).toBeInTheDocument();
+  });
+
+  it("should have a Add to Cart button", () => {
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <ProductDetail />
+        </BrowserRouter>
+      </Provider>
     );
-    expect(productTitle).toBeInTheDocument();
+
+    const addToCartButton = screen.getByRole("button");
+    expect(addToCartButton.textContent).toBe("Add to Cart");
   });
 });

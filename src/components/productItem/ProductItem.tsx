@@ -37,7 +37,7 @@ const ProductItem: FC<ProductItemProps> = ({ product }) => {
           {product.title}
         </Typography>
         <Typography gutterBottom sx={{ fontSize: 18 }}>
-          &pound;{product.price}
+          &pound;{Number(product.price).toFixed(2)}
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Typography component="p">{product.rating.rate}</Typography>

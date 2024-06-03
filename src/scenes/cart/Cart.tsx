@@ -110,6 +110,7 @@ const Cart: FC = () => {
                   key={index}
                   cartItem={cartItem}
                   product={cartProduct}
+                  isLast={index === cart.products.length - 1}
                 />
               );
             })}
@@ -137,6 +138,7 @@ const Cart: FC = () => {
                   </Typography>
                   <Typography
                     component="p"
+                    data-test="cartTotal"
                     sx={{ fontSize: 18, fontWeight: 500, mb: 4 }}
                   >
                     &pound;{Number(getCartTotal()).toFixed(2)}
@@ -147,9 +149,15 @@ const Cart: FC = () => {
                   size="medium"
                   color="success"
                   onClick={handlePlaceOrder}
-                  sx={{ ml: "auto", display: "block" }}
+                  sx={{
+                    ml: "auto",
+                    display: "block",
+                    width: "100%",
+                    height: 50,
+                    textTransform: "none",
+                  }}
                 >
-                  Place you order
+                  Place your Order
                 </Button>
               </CardContent>
             </Card>

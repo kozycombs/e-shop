@@ -8,58 +8,60 @@ import { APP_URL } from "../../constants";
 interface CartItemProps {
   cartItem: CartProduct;
   product: Product;
+  isLast: boolean;
 }
 
-const CartItem: FC<CartItemProps> = ({ cartItem, product }) => {
+const CartItem: FC<CartItemProps> = ({ cartItem, product, isLast }) => {
   return (
-    <Grid
-      container
-      spacing={{ xs: 4, md: 3 }}
-      rowSpacing={2}
-      columns={{ xs: 1, sm: 5 }}
-      sx={{ mb: 5 }}
-    >
-      <Grid item xs={1} sm={1}>
-        <Link to={`${APP_URL.PRODUCT}/${product.id}`}>
-          <Box
-            component="img"
-            sx={{
-              height: "auto",
-              width: "100%",
-              maxHeight: { xs: 100 },
-              objectFit: "contain",
-            }}
-            alt={product?.title}
-            src={product?.image}
-          />
-        </Link>
+    <>
+      <Grid
+        container
+        spacing={{ xs: 4, md: 3 }}
+        rowSpacing={2}
+        columns={{ xs: 1, sm: 5 }}
+        sx={{ mb: 5 }}
+      >
+        <Grid item xs={1} sm={1}>
+          <Link to={`${APP_URL.PRODUCT}/${product.id}`}>
+            <Box
+              component="img"
+              sx={{
+                height: "auto",
+                width: "100%",
+                maxHeight: { xs: 100 },
+                objectFit: "contain",
+              }}
+              alt={product?.title}
+              src={product?.image}
+            />
+          </Link>
+        </Grid>
+        <Grid item xs={1} sm={3}>
+          <Link to={`${APP_URL.PRODUCT}/${product.id}`}>
+            <Typography component="p" sx={{ fontSize: 18, fontWeight: 500 }}>
+              {product.title}
+            </Typography>
+            <Typography
+              component="p"
+              sx={{ fontSize: 14, fontWeight: 400, mb: 4 }}
+            >
+              quantity: {cartItem.quantity}
+            </Typography>
+          </Link>
+        </Grid>
+        <Grid item xs={1} sm={1}>
+          <Box>
+            <Typography
+              component="p"
+              sx={{ fontSize: 18, fontWeight: 400, mb: 4 }}
+            >
+              &pound;{product?.price * cartItem.quantity}
+            </Typography>
+          </Box>
+        </Grid>
       </Grid>
-      <Grid item xs={1} sm={3}>
-        <Link to={`${APP_URL.PRODUCT}/${product.id}`}>
-          <Typography component="p" sx={{ fontSize: 18, fontWeight: 500 }}>
-            {product.title}
-          </Typography>
-          <Typography
-            component="p"
-            sx={{ fontSize: 14, fontWeight: 400, mb: 4 }}
-          >
-            quantity: {cartItem.quantity}
-          </Typography>
-        </Link>
-      </Grid>
-
-      <Grid item xs={1} sm={1}>
-        <Box>
-          <Typography
-            component="p"
-            sx={{ fontSize: 18, fontWeight: 400, mb: 4 }}
-          >
-            &pound;{product?.price * cartItem.quantity}
-          </Typography>
-        </Box>
-      </Grid>
-      <Divider sx={{ mb: 4 }} />
-    </Grid>
+      {!isLast && <Divider sx={{ mb: 4 }} />}
+    </>
   );
 };
 
