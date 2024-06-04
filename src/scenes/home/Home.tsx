@@ -1,37 +1,21 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Grid, Typography } from "@mui/material";
-import {
-  fetchProducts,
-  productsSelector,
-  updateProducts,
-} from "../../store/productSlice";
+import { fetchProducts, productsSelector } from "../../store/productSlice";
 import ProductItem from "../../components/productItem/ProductItem";
 import Spinner from "../../components/spinner/Spinner";
 import ErrorBanner from "../../components/errorBanner/ErrorBanner";
 import { Link } from "react-router-dom";
 import { APP_URL } from "../../constants";
+import { AppDispatch } from "../../store";
 
 const Home: FC = () => {
-  const dispatch = useDispatch();
-  const products = useSelector(productsSelector);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const dispatch = useDispatch<AppDispatch>();
+  const { data: products, loading, error } = useSelector(productsSelector);
 
   useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const result = await fetchProducts();
-        dispatch(updateProducts(result));
-        setLoading(false);
-      } catch (error) {
-        setError("Failed to load our products. Please try again later");
-        setLoading(false);
-      }
-    };
-    if (products.data.length <= 0) {
-      setLoading(true);
-      getProducts();
+    if (products.length <= 0) {
+      dispatch(fetchProducts());
     }
   }, [products, dispatch]);
 
@@ -52,7 +36,7 @@ const Home: FC = () => {
         rowSpacing={4}
         columns={{ xs: 12, sm: 12, md: 12 }}
       >
-        {!loading && products.data.length <= 0 && (
+        {!loading && products.length <= 0 && (
           <Box
             sx={{
               width: "100%",
@@ -65,7 +49,7 @@ const Home: FC = () => {
             <Typography component="p">No products found.</Typography>
           </Box>
         )}
-        {products.data.map((product, index) => (
+        {products.map((product, index) => (
           <Grid item xs={6} sm={4} md={3} key={index}>
             <Link to={`${APP_URL.PRODUCT}/${product.id}`}>
               <ProductItem product={product} />

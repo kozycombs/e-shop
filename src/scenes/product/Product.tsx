@@ -21,17 +21,17 @@ import Spinner from "../../components/spinner/Spinner";
 import {
   addToCart,
   cartSelector,
-  updateCart,
   updateCartProduct,
 } from "../../store/cartSlice";
 import { ToastMessage } from "../../interface/ToastMessage";
 import { PRODUCT_QUATITY_COUNT } from "../../constants";
 import ErrorBanner from "../../components/errorBanner/ErrorBanner";
+import { AppDispatch } from "../../store";
 
 const Product: FC = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
-  const products = useSelector(productsSelector);
+  const dispatch = useDispatch<AppDispatch>();
+  const { data: products } = useSelector(productsSelector);
   const { data: cart } = useSelector(cartSelector);
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState<ProductInterface>();
@@ -48,7 +48,7 @@ const Product: FC = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const result = await fetchProduct(Number(id));
+        const result = await dispatch(fetchProduct(Number(id))).unwrap();
         setProduct(result);
         setLoading(false);
       } catch (error) {
@@ -60,21 +60,20 @@ const Product: FC = () => {
     // If product list is empty get product detail from API
     // otherwiser get product detail from cached product list.
 
-    if (products.data.length <= 0) {
+    if (products.length <= 0) {
       setLoading(true);
       getProduct();
     } else {
       setLoading(true);
       const product =
-        products.data.find(
-          (currentProduct) => currentProduct.id === Number(id)
-        ) || null;
+        products.find((currentProduct) => currentProduct.id === Number(id)) ||
+        null;
       if (product) {
         setProduct(product);
       }
       setLoading(false);
     }
-  }, [id, products]);
+  }, [id, products, dispatch]);
 
   const resetToastMessage = () => {
     setToastMessage({ message: "", severity: "success" });
@@ -95,18 +94,14 @@ const Product: FC = () => {
 
       // If cart is null add to cart else update with cart id.
       if (!cart) {
-        const result = await addToCart(userId, date, [
-          { productId: product?.id, quantity },
-        ]);
+        const result = await dispatch(
+          addToCart({
+            userId,
+            date,
+            products: [{ productId: product?.id, quantity }],
+          })
+        ).unwrap();
         if (result.id) {
-          dispatch(
-            updateCart({
-              id: Number(result.id),
-              userId,
-              date,
-              products: [{ productId: product?.id, quantity }],
-            })
-          );
           setToastMessage({
             message: "Product added to cart successfully",
             severity: "success",
@@ -131,21 +126,10 @@ const Product: FC = () => {
             (currentProduct) => currentProduct.productId !== product.id
           );
           const products = [...otherProducts, updatedProduct];
-          const result = await updateCartProduct(
-            cart.id,
-            userId,
-            date,
-            products
-          );
+          const result = await dispatch(
+            updateCartProduct({ cartId: cart.id, userId, date, products })
+          ).unwrap();
           if (result.id) {
-            dispatch(
-              updateCart({
-                id: Number(result.id),
-                userId,
-                date,
-                products,
-              })
-            );
             setToastMessage({
               message: "Product added to cart successfully",
               severity: "success",
@@ -162,21 +146,10 @@ const Product: FC = () => {
             ...cart.products,
             { productId: product?.id, quantity },
           ];
-          const result = await updateCartProduct(
-            cart.id,
-            userId,
-            date,
-            products
-          );
+          const result = await dispatch(
+            updateCartProduct({ cartId: cart.id, userId, date, products })
+          ).unwrap();
           if (result.id) {
-            dispatch(
-              updateCart({
-                id: Number(result.id),
-                userId,
-                date,
-                products,
-              })
-            );
             setToastMessage({
               message: "Product added to cart successfully",
               severity: "success",
