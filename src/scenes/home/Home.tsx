@@ -1,13 +1,13 @@
 import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Box, Grid, Typography } from "@mui/material";
-import { fetchProducts, productsSelector } from "../../store/productSlice";
-import ProductItem from "../../components/productItem/ProductItem";
-import Spinner from "../../components/spinner/Spinner";
-import ErrorBanner from "../../components/errorBanner/ErrorBanner";
 import { Link } from "react-router-dom";
-import { APP_URL } from "../../constants";
-import { AppDispatch } from "../../store";
+import { Box, Grid, Typography } from "@mui/material";
+import { fetchProducts, productsSelector } from "store/productSlice";
+import { AppDispatch } from "store/index";
+import ProductItem from "components/productItem/ProductItem";
+import Spinner from "components/spinner/Spinner";
+import ErrorBanner from "components/errorBanner/ErrorBanner";
+import { APP_URL } from "constants/index";
 
 const Home: FC = () => {
   const dispatch = useDispatch<AppDispatch>();

@@ -15,18 +15,14 @@ import {
   Snackbar,
   Typography,
 } from "@mui/material";
-import { fetchProduct, productsSelector } from "../../store/productSlice";
-import { Product as ProductInterface } from "../../interface/Product";
-import Spinner from "../../components/spinner/Spinner";
-import {
-  addToCart,
-  cartSelector,
-  updateCartProduct,
-} from "../../store/cartSlice";
-import { ToastMessage } from "../../interface/ToastMessage";
-import { PRODUCT_QUATITY_COUNT } from "../../constants";
-import ErrorBanner from "../../components/errorBanner/ErrorBanner";
-import { AppDispatch } from "../../store";
+import { fetchProduct, productsSelector } from "store/productSlice";
+import { Product as ProductInterface } from "interface/Product";
+import Spinner from "components/spinner/Spinner";
+import { addToCart, cartSelector, updateCartProduct } from "store/cartSlice";
+import { AppDispatch } from "store/index";
+import { ToastMessage } from "interface/ToastMessage";
+import { PRODUCT_QUATITY_COUNT } from "constants/index";
+import ErrorBanner from "components/errorBanner/ErrorBanner";
 
 const Product: FC = () => {
   const { id } = useParams();

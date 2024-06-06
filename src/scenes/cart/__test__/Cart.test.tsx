@@ -1,12 +1,12 @@
 import { Provider } from "react-redux";
 import { render, screen, configure } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { updateProducts } from "../../../store/productSlice";
-import { store } from "../../../store";
-import { Product } from "../../../interface/Product";
-import CartPage from "../Cart";
-import { resetCart, updateCart } from "../../../store/cartSlice";
-import { Cart } from "../../../interface/Cart";
+import { updateProducts } from "store/productSlice";
+import { store } from "store/index";
+import { Product } from "interface/Product";
+import CartPage from "scenes/cart/Cart";
+import { resetCart, updateCart } from "store/cartSlice";
+import { Cart } from "interface/Cart";
 
 describe("<CartPage />", () => {
   configure({

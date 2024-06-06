@@ -2,10 +2,10 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Badge, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import AppContainer from "../appContainer/AppContainer";
-import { APP_NAME, APP_URL } from "../../constants";
-import { MENU_ITEMS } from "../../constants/menu";
-import useCartItemsTotal from "../../hooks/useCartItemsTotal";
+import AppContainer from "components/appContainer/AppContainer";
+import { APP_NAME, APP_URL } from "constants/index";
+import { MENU_ITEMS } from "constants/menu";
+import useCartItemsTotal from "hooks/useCartItemsTotal";
 
 interface HeaderProps {
   toggleDrawer: () => void;

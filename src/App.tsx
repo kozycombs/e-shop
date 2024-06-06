@@ -1,8 +1,8 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/layout/Layout";
-import { APP_URL } from "./constants";
-import Spinner from "./components/spinner/Spinner";
+import Layout from "components/layout/Layout";
+import { APP_URL } from "constants/index";
+import Spinner from "components/spinner/Spinner";
 
 function App() {
   const HomePage = lazy(() => import("./scenes/home/Home"));

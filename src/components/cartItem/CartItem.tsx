@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { CartProduct } from "../../interface/Cart";
-import { Product } from "../../interface/Product";
-import { Box, Divider, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { APP_URL } from "../../constants";
+import { Box, Divider, Grid, Typography } from "@mui/material";
+import { CartProduct } from "interface/Cart";
+import { Product } from "interface/Product";
+import { APP_URL } from "constants/index";
 
 interface CartItemProps {
   cartItem: CartProduct;

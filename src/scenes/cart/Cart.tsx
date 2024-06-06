@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Alert,
   Box,
@@ -11,12 +12,11 @@ import {
   Typography,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { productsSelector } from "../../store/productSlice";
-import { cartSelector, resetCart } from "../../store/cartSlice";
-import CartItem from "../../components/cartItem/CartItem";
-import { ToastMessage } from "../../interface/ToastMessage";
-import { Link } from "react-router-dom";
-import { APP_URL } from "../../constants";
+import { productsSelector } from "store/productSlice";
+import { cartSelector, resetCart } from "store/cartSlice";
+import CartItem from "components/cartItem/CartItem";
+import { ToastMessage } from "interface/ToastMessage";
+import { APP_URL } from "constants/index";
 
 const Cart: FC = () => {
   const dispatch = useDispatch();

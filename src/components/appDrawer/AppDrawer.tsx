@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { AppBar, Badge, Divider, Drawer } from "@mui/material";
-import { APP_DRAWER_WIDTH, APP_NAME, APP_URL } from "../../constants";
-import Header from "../header/Header";
-import { MENU_ITEMS } from "../../constants/menu";
-import useCartItemsTotal from "../../hooks/useCartItemsTotal";
+import { APP_DRAWER_WIDTH, APP_NAME, APP_URL } from "constants/index";
+import Header from "components/header/Header";
+import { MENU_ITEMS } from "constants/menu";
+import useCartItemsTotal from "hooks/useCartItemsTotal";
 
 export const AppDrawer: FC = () => {
   const [openDrawer, setOpenDrawer] = useState(false);

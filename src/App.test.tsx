@@ -2,10 +2,10 @@ import { act } from "react";
 import { Provider } from "react-redux";
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { updateProducts } from "./store/productSlice";
-import { store } from "./store";
-import { Product } from "./interface/Product";
-import App from "./App";
+import { updateProducts } from "store/productSlice";
+import { store } from "store";
+import { Product } from "interface/Product";
+import App from "App";
 
 describe("<App />", () => {
   beforeAll(() => {

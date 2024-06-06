@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { RootState } from ".";
-import { Product } from "../interface/Product";
-import { API_BASE_URL } from "../constants";
-import { InitialStateProps } from "../interface/InitialStateProps";
+import { RootState } from "store/index";
+import { Product } from "interface/Product";
+import { API_BASE_URL } from "constants/index";
+import { InitialStateProps } from "interface/InitialStateProps";
 
 export const initialState: InitialStateProps<Product[]> = {
   loading: false,

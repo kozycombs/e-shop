@@ -1,4 +1,4 @@
-import { APP_URL } from ".";
+import { APP_URL } from "constants/index";
 
 interface Menu {
   title: string;

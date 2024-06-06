@@ -1,8 +1,8 @@
 import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { FC, ReactNode } from "react";
-import AppDrawer from "../appDrawer/AppDrawer";
-import Footer from "../footer/Footer";
-import AppContainer from "../appContainer/AppContainer";
+import AppDrawer from "components/appDrawer/AppDrawer";
+import Footer from "components/footer/Footer";
+import AppContainer from "components/appContainer/AppContainer";
 
 interface LayoutProps {
   children: ReactNode;

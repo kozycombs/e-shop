@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import CartItem from "../CartItem";
-import { Product } from "../../../interface/Product";
-import { CartProduct } from "../../../interface/Cart";
+import CartItem from "components/cartItem/CartItem";
+import { Product } from "interface/Product";
+import { CartProduct } from "interface/Cart";
 
 describe("<CartItem /> component", () => {
   const product: Product = {

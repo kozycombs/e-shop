@@ -1,10 +1,10 @@
 import { Provider } from "react-redux";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { updateProducts } from "../../../store/productSlice";
-import { store } from "../../../store";
-import { Product } from "../../../interface/Product";
-import Home from "../Home";
+import { updateProducts } from "store/productSlice";
+import { store } from "store/index";
+import { Product } from "interface/Product";
+import Home from "scenes/home/Home";
 
 describe("<Home />", () => {
   beforeAll(() => {

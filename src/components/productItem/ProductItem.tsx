@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Product } from "../../interface/Product";
+import { Product } from "interface/Product";
 import {
   Box,
   Card,

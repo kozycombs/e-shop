@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { RootState } from ".";
-import { API_BASE_URL } from "../constants";
-import { InitialStateProps } from "../interface/InitialStateProps";
-import { Cart, CartProduct } from "../interface/Cart";
+import { RootState } from "store/index";
+import { API_BASE_URL } from "constants/index";
+import { InitialStateProps } from "interface/InitialStateProps";
+import { Cart, CartProduct } from "interface/Cart";
 
 export const initialState: InitialStateProps<Cart | null> = {
   loading: false,

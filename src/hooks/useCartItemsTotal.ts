@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { cartSelector } from "../store/cartSlice";
+import { cartSelector } from "store/cartSlice";
 
 const useCartItemsTotal = () => {
   const { data: cart } = useSelector(cartSelector);
